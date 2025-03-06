@@ -19,3 +19,80 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Fade In */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-in-out;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 1s ease-in-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* Slide Up */
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out;
+}
+
+/* Text Pop */
+@keyframes text-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.animate-text-pop {
+  animation: text-pop 0.5s ease-in-out;
+}
+
+/* Slow Bounce */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite ease-in-out;
+}
+
+/* Arrow Move */
+@keyframes arrow-move {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-arrow-move {
+  animation: arrow-move 1.5s infinite ease-in-out;
+}
+
+/* Input Focus Animation */
+@keyframes input-focus {
+  from { transform: scale(1); }
+  to { transform: scale(1.02); }
+}
+
+.animate-input-focus:focus {
+  animation: input-focus 0.3s ease-in-out forwards;
+}
+
+/* Spin */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s infinite linear;
+}

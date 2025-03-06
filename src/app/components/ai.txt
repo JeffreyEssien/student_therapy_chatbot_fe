@@ -1,0 +1,11 @@
+LANGSMITH_TRACING=true
+LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
+LANGSMITH_API_KEY="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"
+LANGSMITH_PROJECT="chatmate"
+OPENAI_API_KEY="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"
+
+import { ChatOpenAI } from "langchain/chat_models/openai";
+
+const llm = new ChatOpenAI();
+await llm.invoke("Hello, world!");
+

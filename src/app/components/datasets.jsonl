@@ -1,0 +1,80 @@
+{
+    "user_input": "I feel overwhelmed with my studies and don't know what to do.",
+    "intent": "academic_stress",
+    "response": "I understand that academic pressure can be challenging. Have you tried breaking tasks into smaller steps or speaking with your academic advisor?",
+    "escalation": false
+  }
+  {
+    "user_input": "I haven’t slept in days, and I feel like giving up on everything.",
+    "intent": "mental_exhaustion",
+    "response": "I'm really sorry you're feeling this way. Sleep and rest are essential. Would you like me to suggest some relaxation techniques or connect you to a counselor?",
+    "escalation": true
+  }
+  {
+    "user_input": "No one understands me, and I don’t think I can go on any longer.",
+    "intent": "suicidal_thoughts",
+    "response": "I'm so sorry you're feeling this way. You are not alone, and there are people who care about you. Please reach out to a counselor or a trusted person immediately. I can also escalate this for urgent support.",
+    "escalation": true
+  }
+  {
+    "user_input": "I have been feeling anxious before exams and can't focus.",
+    "intent": "exam_anxiety",
+    "response": "Exam anxiety is tough, but you can manage it with proper techniques. Have you tried deep breathing or structured study plans? I can share some resources if you'd like.",
+    "escalation": false
+  }
+  {
+    "user_input": "I think my roommate is planning to hurt themselves.",
+    "intent": "concern_for_others",
+    "response": "This is serious. Please encourage them to talk to someone immediately. If you believe they are in danger, contact a trusted faculty member or counselor now. Would you like me to escalate this for urgent support?",
+    "escalation": true
+  }
+  {
+    "user_input": "I feel lonely and isolated, and I don’t know how to make friends.",
+    "intent": "loneliness",
+    "response": "Feeling lonely can be tough, but you're not alone. Have you considered joining campus clubs or talking to classmates? Making small connections can help over time.",
+    "escalation": false
+  }
+  {
+    "user_input": "I am afraid to go back to my hostel because someone is threatening me.",
+    "intent": "physical_safety_risk",
+    "response": "Your safety is the most important thing. Please report this immediately to campus security or a trusted faculty member. Would you like me to escalate this for urgent intervention?",
+    "escalation": true
+  }
+  {
+    "user_input": "I feel like my professors don’t care about my struggles.",
+    "intent": "faculty_concerns",
+    "response": "I'm sorry you're feeling unheard. Have you considered speaking with your academic advisor or student affairs? They might be able to help bridge the gap.",
+    "escalation": false
+  }
+  {
+    "user_input": "I’m struggling financially and can’t afford my meals.",
+    "intent": "financial_difficulty",
+    "response": "Financial struggles can be tough. Have you checked if you're eligible for financial aid or meal assistance programs? I can help guide you to the right resources.",
+    "escalation": false
+  }
+  {
+    "user_input": "I feel like I'm being bullied on campus and don’t know what to do.",
+    "intent": "bullying",
+    "response": "Bullying is not acceptable. Please consider reporting it to student affairs or a faculty member. Would you like me to escalate this for further support?",
+    "escalation": true
+  }
+  {
+    "user_input": "I have been feeling sick but can’t afford to visit the hospital.",
+    "intent": "health_concerns",
+    "response": "Your health is important. Have you visited the campus clinic? There may be free or low-cost medical services available to you.",
+    "escalation": false
+  }
+  {
+    "user_input": "I feel like dropping out of school because I can’t handle the pressure anymore.",
+    "intent": "academic_withdrawal",
+    "response": "I'm sorry you're feeling this way. Have you considered speaking to an academic counselor or support group? You’re not alone in this, and there are people who can help.",
+    "escalation": true
+  }
+  {
+    "user_input": "I feel discriminated against because of my background.",
+    "intent": "discrimination",
+    "response": "Discrimination should not be tolerated. You may want to report this to the appropriate university office. Would you like me to escalate this for assistance?",
+    "escalation": true
+  }
+  
+  
