@@ -13,4 +13,14 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
+module.exports = {
+  extends: ["eslint:recommended", "plugin:react/recommended"], // Add necessary presets
+  rules: {
+    "no-console": "off", // Example: Disable no-console rule globally
+    "react-hooks/exhaustive-deps": "off", // Example: Disable React hook dependency warnings
+    "no-unused-vars": "warn", // Change 'error' to 'warn' for unused variables
+  },
+};
+
+
 export default eslintConfig;
