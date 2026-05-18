@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import landingpage1 from "../../../public/landingpage1.jpg";
+import landingpage1 from "../../../../public/landingpage1.jpg";
 import { useMagnetic } from "@/hooks/useMagnetic";
 import { useParallax } from "@/hooks/useParallax";
-import StaggerText from "../components/StaggerText";
+import StaggerText from "../StaggerText";
 
 interface HeroSectionProps {
   navigateTo: (path: string) => void;

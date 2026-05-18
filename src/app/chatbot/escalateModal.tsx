@@ -1,16 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Escalation } from "@/lib/escalations";
 
 interface Props {
-  escalation: Escalation;
-  onConfirm: (note: string) => void;
+  onConfirm: (reason: string) => void;
   onCancel: () => void;
 }
 
-export default function ResolveModal({ escalation, onConfirm, onCancel }: Props) {
-  const [note, setNote] = useState("");
+export default function EscalateModal({ onConfirm, onCancel }: Props) {
+  const [reason, setReason] = useState("");
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -29,24 +27,24 @@ export default function ResolveModal({ escalation, onConfirm, onCancel }: Props)
         className="reveal relative w-full max-w-lg border border-ink/10 bg-paper p-10 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.4)]"
         onClick={(e) => e.stopPropagation()}
       >
-        <p className="font-mono text-eyebrow uppercase text-emerald">◇ &nbsp; Confirm resolution</p>
+        <p className="font-mono text-eyebrow uppercase text-emerald">◇ &nbsp; Reach a human</p>
         <h2 className="mt-3 font-serif text-3xl leading-tight tracking-editorial">
-          Closing the loop with{" "}
-          <span className="italic">{escalation.studentName.split(" ")[0]}.</span>
+          Want a counselor to <span className="italic">reach out?</span>
         </h2>
         <p className="mt-3 font-sans text-sm leading-relaxed text-ink/65">
-          Have you spoken with this student, or scheduled time to? Leave a brief note for the next counselor on rotation.
+          Your conversation so far will be shared, in confidence, with the next available counselor.
+          They'll contact you at the email on file. You don't have to wait alone.
         </p>
 
         <label className="field-underline mt-8 block">
           <span className="mb-2 block font-mono text-eyebrow uppercase text-ash">
-            Counselor note (optional)
+            What's the main thing? (optional)
           </span>
           <textarea
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
+            value={reason}
+            onChange={(e) => setReason(e.target.value)}
             rows={3}
-            placeholder="e.g. Spoke at 2pm, scheduled follow-up Thursday."
+            placeholder="e.g. exam anxiety, family situation, just feeling really low…"
             className="w-full resize-none border-b border-ink/20 bg-transparent py-3 font-sans text-base text-ink placeholder:text-ash/70 outline-none"
             autoFocus
           />
@@ -57,16 +55,20 @@ export default function ResolveModal({ escalation, onConfirm, onCancel }: Props)
             onClick={onCancel}
             className="btn-magnetic px-5 py-3 font-mono text-eyebrow uppercase text-ink/70 hover:text-ink"
           >
-            Cancel
+            Not now
           </button>
           <button
-            onClick={() => onConfirm(note.trim())}
+            onClick={() => onConfirm(reason.trim())}
             className="btn-magnetic inline-flex items-center gap-3 bg-ink px-6 py-3 text-paper hover:bg-emerald-deep"
           >
-            <span className="font-mono text-eyebrow uppercase">Mark resolved</span>
+            <span className="font-mono text-eyebrow uppercase">Send to counselor</span>
             <span className="font-mono text-sm">→</span>
           </button>
         </div>
+
+        <p className="mt-6 font-mono text-[0.62rem] uppercase tracking-caps text-ash">
+          In immediate crisis? In Nigeria, call MANI 24/7 at 0809 111 6264.
+        </p>
       </div>
     </div>
   );
