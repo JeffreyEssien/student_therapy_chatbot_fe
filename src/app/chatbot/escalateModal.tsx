@@ -33,12 +33,12 @@ export default function EscalateModal({ onConfirm, onCancel }: Props) {
         </h2>
         <p className="mt-3 font-sans text-sm leading-relaxed text-ink/65">
           Your conversation so far will be shared, in confidence, with the next available counselor.
-          They'll contact you at the email on file. You don't have to wait alone.
+          They&apos;ll contact you at the email on file. You don&apos;t have to wait alone.
         </p>
 
         <label className="field-underline mt-8 block">
           <span className="mb-2 block font-mono text-eyebrow uppercase text-ash">
-            What's the main thing? (optional)
+            What&apos;s the main thing? (optional)
           </span>
           <textarea
             value={reason}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import { Toaster, toast } from "react-hot-toast";
 import {
   Escalation,
@@ -98,9 +99,9 @@ export default function AdminPage() {
 
       <header className="sticky top-0 z-40 border-b border-ink/8 bg-paper/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1440px] items-baseline justify-between px-6 py-5 md:px-12">
-          <a href="/" className="font-serif italic text-2xl tracking-editorial">
+          <Link href="/" className="font-serif italic text-2xl tracking-editorial">
             Chatmate<span className="text-emerald">.</span>
-          </a>
+          </Link>
           <span className="font-mono text-eyebrow uppercase text-ash">
             Counselor console · v1
           </span>
@@ -192,7 +193,7 @@ export default function AdminPage() {
               Nothing to look at <span className="italic">right now.</span>
             </h3>
             <p className="mt-3 font-sans text-sm text-ink/60">
-              When a student requests a counselor, they'll appear here.
+              When a student requests a counselor, they&apos;ll appear here.
             </p>
           </div>
         ) : (

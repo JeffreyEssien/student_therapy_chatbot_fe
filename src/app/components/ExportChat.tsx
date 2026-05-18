@@ -16,7 +16,7 @@ const ExportChat: React.FC<ExportChatProps> = ({ messages }) => {
     doc.text("Chat History", 10, 10);
 
     let y = 20;
-    messages.forEach(({ user, bot }, index) => {
+    messages.forEach(({ user, bot }) => {
       doc.text(`User: ${user}`, 10, y);
       y += 7;
       doc.text(`Bot: ${bot}`, 10, y);

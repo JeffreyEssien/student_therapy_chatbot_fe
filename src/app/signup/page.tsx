@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Toast from "./toast";
 import { registerUser } from "@/lib/auth";
@@ -99,9 +100,9 @@ export default function SignupPage() {
     <div className="min-h-screen w-full bg-paper text-ink">
       <div className="mx-auto grid min-h-screen max-w-[1440px] grid-cols-12 px-6 md:px-12">
         <aside className="col-span-12 hidden flex-col justify-between py-12 md:col-span-4 md:flex">
-          <a href="/" className="font-serif italic text-2xl tracking-editorial">
+          <Link href="/" className="font-serif italic text-2xl tracking-editorial">
             Chatmate<span className="text-emerald">.</span>
-          </a>
+          </Link>
           <div className="reveal">
             <p className="mb-6 font-mono text-eyebrow uppercase text-emerald">◇ &nbsp; New here</p>
             <h1 className="font-serif text-[clamp(2.5rem,4vw,3.6rem)] leading-[1.02] tracking-tightest">

@@ -36,7 +36,7 @@ export default function SidebarComponent({ isOpen, onClose, history, onHistoryCl
         </div>
 
         <h2 className="mb-10 font-serif text-3xl tracking-editorial">
-          What you've <span className="italic">said.</span>
+          What you&apos;ve <span className="italic">said.</span>
         </h2>
 
         <div className="flex-1 overflow-y-auto">
