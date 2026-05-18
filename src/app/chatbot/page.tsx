@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Header from "../chatbot/header";
-import SidebarComponent from "../chatbot/sidebarComponent";
-import ChatWindow from "../chatbot/chatWindow";
-import MessageInput from "../chatbot/messageInput";
+import { useRouter } from "next/navigation";
+import Header from "./header";
+import SidebarComponent from "./sidebarComponent";
+import ChatWindow from "./chatWindow";
+import MessageInput from "./messageInput";
+import { getSession, signOut, type Session } from "@/lib/auth";
 
 interface Message {
   id: number;
@@ -31,6 +33,23 @@ export default function ChatbotPage() {
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
   const [isBotTyping, setIsBotTyping] = useState<boolean>(false);
   const messageRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const router = useRouter();
+  const [session, setSession] = useState<Session | null>(null);
+
+  // Auth gate
+  useEffect(() => {
+    const s = getSession();
+    if (!s) {
+      router.replace("/login");
+      return;
+    }
+    setSession(s);
+  }, [router]);
+
+  const handleSignOut = () => {
+    signOut();
+    router.replace("/login");
+  };
 
   // Load chat history from local storage on mount
   useEffect(() => {
@@ -119,14 +138,24 @@ export default function ChatbotPage() {
     setMenuOpen(false); // Close the menu after clearing
   };
 
+  if (!session) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-paper text-ink">
+        <p className="font-mono text-eyebrow uppercase text-ash">◇ &nbsp; Checking session…</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="flex flex-col h-screen bg-gray-100">
+    <div className="flex h-screen flex-col bg-paper text-ink">
       <Header
         onSidebarToggle={() => setSidebarOpen(!sidebarOpen)}
         menuOpen={menuOpen}
         onMenuToggle={() => setMenuOpen(!menuOpen)}
         exportableMessages={exportableMessages}
         onClearChat={handleClearChat}
+        sessionName={session.fullName ?? session.email}
+        onSignOut={handleSignOut}
       />
       <SidebarComponent
         isOpen={sidebarOpen}

@@ -27,8 +27,11 @@ const ExportChat: React.FC<ExportChatProps> = ({ messages }) => {
   };
 
   return (
-    <button onClick={handleExport} className="block bg-white text-blue-500 px-4 py-2 w-full text-left">
-      Export Chat as PDF
+    <button
+      onClick={handleExport}
+      className="block w-full border-b border-ink/10 px-4 py-3 text-left font-mono text-eyebrow uppercase text-ink/80 transition-colors duration-300 hover:bg-ink hover:text-paper"
+    >
+      Export chat · PDF
     </button>
   );
 };

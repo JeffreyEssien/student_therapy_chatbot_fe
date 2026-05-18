@@ -24,23 +24,14 @@ export default function Toast({ message, type, duration = 3000, onClose }: Toast
 
   return (
     <div
-      className={`fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-lg shadow-lg text-white font-semibold animate-toast-slide-in ${
-        type === "success" ? "bg-green-500" : "bg-red-500"
+      role="status"
+      className={`reveal fixed top-6 left-1/2 -translate-x-1/2 px-6 py-3 font-mono text-eyebrow uppercase border ${
+        type === "success"
+          ? "bg-paper text-emerald border-emerald/40"
+          : "bg-ink text-paper border-ink"
       }`}
     >
       {message}
     </div>
   );
 }
-
-// CSS Animation for Toast (add to globals.css or a module)
-const toastAnimation = `
-@keyframes toast-slide-in {
-  from { transform: translate(-50%, -100%); opacity: 0; }
-  to { transform: translate(-50%, 0); opacity: 1; }
-}
-
-.animate-toast-slide-in {
-  animation: toast-slide-in 0.5s ease-out;
-}
-`;
